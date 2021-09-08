@@ -12,6 +12,12 @@ int main() {
     cout << "\nEnter the number for the second x value: "; cin >> m2x;
     cout << "\nEnter the number for the second y value: "; cin >> m2y;
 
+    // Making sure the input is valid
+    if((m1y != m2x) || (m1x != m2y)){
+        cout << "\nSorry! the matrices you entered are not supported!";
+        return 1;
+    }
+
     // Initializing phase 2
     int m1[m1x][m1y];
     int m2[m2x][m2y];
@@ -37,5 +43,10 @@ int main() {
     // Initializing the result
     int result[lox][loy];
 
+    /* Computing the dot product
+    for(int x = 0; x < lox; x++){for( int y = 0; y < loy; y++){
+
+    }}
+    */
     return 0;
 }
