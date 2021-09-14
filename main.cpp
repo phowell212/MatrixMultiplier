@@ -2,7 +2,7 @@
 using namespace std;
 
 int main() {
-    // Initializing phase I
+    // Declarations phase I
     int m1x; int m1y; int m2x; int m2y;
     int maxrandomvalue = 99;
 
@@ -18,7 +18,7 @@ int main() {
         return 1;
     }
 
-    // Initializing phase II
+    // Declarations phase II
     int m1[m1x][m1y];
     int m2[m2x][m2y];
     int lox; int loy;
@@ -48,7 +48,7 @@ int main() {
         hiy = m1y;
     }
 
-    // Initializing phase III
+    // Declarations phase III
     int result[lox][loy];
 
     // Filling the result array with 0s
