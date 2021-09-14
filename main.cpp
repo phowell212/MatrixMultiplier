@@ -32,7 +32,7 @@ int main() {
         m2[x][y] = rand()%maxrandomvalue;
     }}
 
-    // Determining his and los
+    // Determining los
     if (m1x < m2x){
         lox = m1x;
         hix = m2x;
@@ -54,13 +54,25 @@ int main() {
     // Filling the result array with 0s
     for (int x = 0; x < lox; x++){for (int y = 0; y < loy; y++){
             result[x][y] = 0;
+    }}
+
+    for(int x = 0; x < lox; x++){for(int y = 0; y < loy; y++){
+        // here we are essentially looping through result
+        // mulval is the value of two integers in m1 and m2 multiplied together
+        int mulval = 0;
+
+        // this is the tricky part How do I do this without going out of bounds?
+        for(int i = 0; i < hix; i++){for(int j = 0; j < hiy; j++){
+            mulval += m1[i][j]*m2[j][i];
+            // is there a way to do: if not in bounds; skip?
+
         }}
+        result[x][y] = mulval;
+        }
 
-    /*/Multiplying the matrices
-    for(int i = 0; i < m1x; i++){for(int j = 0; i < m2y; j++){for(int k = 0; k < m1y; k++){
-        result[i][j] = result[i][j] + (m1[i][k] * m2[k][j]);
-    }}}*/
+    }
 
+    // Printing the arrays
     cout << "Matrix 1: \n";
     for (int x = 0; x < m1x; x++){
         for (int y = 0; y < m1y; y++){
@@ -75,6 +87,7 @@ int main() {
         }
         cout << "\n";
     }
+
     cout << "Result: \n";
     for (int x = 0; x < lox; x++){
         for (int y = 0; y < loy; y++){
