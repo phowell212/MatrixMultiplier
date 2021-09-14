@@ -7,10 +7,10 @@ int main() {
     int maxrandomvalue = 99;
 
     // Getting user input
-    cout << "\nEnter the number for the first x value: "; cin >> m1x;
-    cout << "\nEnter the number for the first y value: "; cin >> m1y;
-    cout << "\nEnter the number for the second x value: "; cin >> m2x;
-    cout << "\nEnter the number for the second y value: "; cin >> m2y;
+    cout << "\nEnter the number of rows of the first array: "; cin >> m1x;
+    cout << "\nEnter the number of columns array: "; cin >> m1y;
+    cout << "\nEnter the number of rows second array: "; cin >> m2x;
+    cout << "\nEnter the number of columns array: "; cin >> m2y;
 
     // Making sure the input is valid
     if((m1y != m2x) || (m1x != m2y)){
@@ -51,12 +51,16 @@ int main() {
     // Initializing phase III
     int result[lox][loy];
 
-    // multiplying the matrices DOES NOT WORK
-    for(int x = 0; x > hix; x++){ for(int y = 0; y > hiy; y++){ for(int z = 0; z > lox; z++){
-        result[x][y] = m1[x][z]*m2[z][y];
-    }}}
+    // Filling the result array with 0s
+    for (int x = 0; x < lox; x++){for (int y = 0; y < loy; y++){
+            result[x][y] = 0;
+        }}
 
-    // Printing
+    /*/Multiplying the matrices
+    for(int i = 0; i < m1x; i++){for(int j = 0; i < m2y; j++){for(int k = 0; k < m1y; k++){
+        result[i][j] = result[i][j] + (m1[i][k] * m2[k][j]);
+    }}}*/
+
     cout << "Matrix 1: \n";
     for (int x = 0; x < m1x; x++){
         for (int y = 0; y < m1y; y++){
