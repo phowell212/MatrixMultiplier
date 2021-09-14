@@ -56,6 +56,17 @@ int main() {
             result[x][y] = 0;
     }}
 
+    // matrix multiplication from the doc - does not work.
+    for(int i = 0; i < m1x; i++){
+        for(int j = 0; i < m1y; j++){
+            for(int k = 0; j < m1y; k++){
+                result[i][j] += m1[i][k] * m2[k][j];
+            }
+        }
+    }
+
+    // This is my broken implementation - also does not work.
+    /*
     for(int x = 0; x < lox; x++){for(int y = 0; y < loy; y++){
         // here we are essentially looping through result
         // mulval is the value of two integers in m1 and m2 multiplied together
@@ -70,7 +81,7 @@ int main() {
         result[x][y] = mulval;
         }
 
-    }
+    }*/
 
     // Printing the arrays
     cout << "Matrix 1: \n";
