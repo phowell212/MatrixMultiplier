@@ -75,7 +75,7 @@ int main() {
         // this is the tricky part How do I do this without going out of bounds?
         for(int i = 0; i < hix; i++){for(int j = 0; j < hiy; j++){
             mulval += m1[i][j]*m2[j][i];
-            // is there a way to do: if not in bounds; skip?
+            // is there a way to implement: if not in bounds; skip?
 
         }}
         result[x][y] = mulval;
