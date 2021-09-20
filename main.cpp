@@ -14,7 +14,7 @@ int main() {
 
     // Making sure the input is valid
     if((m1y != m2x) || (m1x != m2y)){
-        cout << "\nSorry! The dot product for the matrices you entered is not calculable!";
+        cout << "\nSorry! The product for the matrices you entered is not calculable!";
         return 1;
     }
 
