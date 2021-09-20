@@ -32,7 +32,7 @@ int main() {
         m2[x][y] = rand()%maxrandomvalue;
     }}
 
-    // Determining los
+    // Determining his and los
     if (m1x < m2x){
         lox = m1x;
         hix = m2x;
