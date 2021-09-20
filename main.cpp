@@ -4,7 +4,7 @@ using namespace std;
 int main() {
     // Declarations phase I
     int m1x; int m1y; int m2x; int m2y;
-    int maxrandomvalue = 99;
+    int maxrandomvalue = 9;
 
     // Getting user input
     cout << "\nEnter the number of rows of the first array: "; cin >> m1x;
