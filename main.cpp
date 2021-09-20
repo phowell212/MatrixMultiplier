@@ -22,7 +22,7 @@ int main() {
     int m1[m1x][m1y];
     int m2[m2x][m2y];
     int lox; int loy;
-    int hix; int hiy;
+    int hix;
 
     // Filling the arrays with random numbers
     for (int x = 0; x < m1x; x++){for (int y = 0; y < m1y; y++){
@@ -42,10 +42,8 @@ int main() {
     }
     if (m1y < m2y){
         loy = m1y;
-        hiy = m2y;
     }else{
         loy = m2y;
-        hiy = m1y;
     }
 
     // Declarations phase III
@@ -56,32 +54,14 @@ int main() {
             result[x][y] = 0;
     }}
 
-    // matrix multiplication from the doc - does not work.
-    for(int i = 0; i < m1x; i++){
-        for(int j = 0; i < m1y; j++){
-            for(int k = 0; j < m1y; k++){
+    // Multiplying the matrices
+    for(int i = 0; i < lox; i++){
+        for(int j = 0; j < loy; j++){
+            for (int k = 0; k < hix; k++){
                 result[i][j] += m1[i][k] * m2[k][j];
             }
         }
     }
-
-    // This is my broken implementation - also does not work.
-    /*
-    for(int x = 0; x < lox; x++){for(int y = 0; y < loy; y++){
-        // here we are essentially looping through result
-        // mulval is the value of two integers in m1 and m2 multiplied together
-        int mulval = 0;
-
-        // this is the tricky part How do I do this without going out of bounds?
-        for(int i = 0; i < hix; i++){for(int j = 0; j < hiy; j++){
-            mulval += m1[i][j]*m2[j][i];
-            // is there a way to implement: if not in bounds; skip?
-
-        }}
-        result[x][y] = mulval;
-        }
-
-    }*/
 
     // Printing the arrays
     cout << "Matrix 1: \n";
